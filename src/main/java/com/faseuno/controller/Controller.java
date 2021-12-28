@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.faseuno.interfaceService.INotaService;
 import com.faseuno.modelo.Nota;
 
 @RestController
+@RequestMapping("/nota")
 public class Controller {
 	
 	@Autowired
@@ -24,12 +24,14 @@ public class Controller {
 	//Crear nota
 	@PostMapping("/crearNota")
 	public Nota agregarNota(@RequestBody Nota nota) {
+		System.out.println("Entra");
 		return serviceNota.agregarNota(nota);
 	}
 	
 	//Listar notas
 	@GetMapping("/listarNota")
 	public List<Nota> listarNotas(){
+		System.out.println("Entra");
 		return serviceNota.listarNotas();
 	}
 	

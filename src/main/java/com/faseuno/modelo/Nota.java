@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "nota")
+@Table(name = "notas")
 public class Nota {
 	
 	@Id
@@ -16,7 +16,6 @@ public class Nota {
 	private Integer id;
 	
 	public Nota(Double nota, Integer id) {
-		super();
 		this.nota = nota;
 		this.id = id;
 	}
